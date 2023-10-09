@@ -13,7 +13,7 @@ for (let i = 0; i < numberOfColorBoxes; i++) {
     bgAnimation.append(colorBox);
 }
 window.onload = () => {
-    fetch('http://localhost:3000/auth/check-login-status', {
+    fetch('https://68cb-36-85-1-212.ngrok-free.app/auth/check-login-status', {
         method: 'GET',
         credentials: 'include'
     })
@@ -24,7 +24,7 @@ window.onload = () => {
         .then(data => {
             console.log('Data', data);
             if (data.isLoggedIn) {
-                window.location.href = 'http://127.0.0.1:8080/index2.html';
+                window.location.href = 'https://dimasalia.github.io/make_db.io/index2.html';
             }
         })
         .catch(error => console.error('Error:', error));
