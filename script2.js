@@ -7,7 +7,7 @@ const inputInitHeight = chatInput.scrollHeight;
 let currentSql = '';
 
 const generateResponse = async (incomingChatLi) => {
-    const endpoint = 'http://localhost:3000/sql/generateSQL';
+    const endpoint = 'https://68cb-36-85-1-212.ngrok-free.app/sql/generateSQL';
     
     try {
         const response = await fetch(endpoint, {
@@ -129,7 +129,7 @@ modifyBtn.addEventListener('click', async () => {
         chatbox.scrollTo(0, chatbox.scrollHeight);
         const previousSql = currentSql;
 
-        const response = await fetch('http://localhost:3000/sql/modifySQLWithMaxTokens', {
+        const response = await fetch('https://68cb-36-85-1-212.ngrok-free.app/sql/modifySQLWithMaxTokens', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ modifyBtn.addEventListener('click', async () => {
 
 document.getElementById('downloadSql').addEventListener('click', async () => {
     try {
-        const response = await fetch('sql/getSQLResult');
+        const response = await fetch('https://68cb-36-85-1-212.ngrok-free.app/sql/getSQLResult');
         const data = await response.json();
 
         if (data.sql === "Tidak Ada SQL yang Dihasilkan") {
@@ -210,7 +210,7 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
             throw new Error('Network response was not ok');
         }
         // Redirect to home page or login page after logout
-        window.location.href = 'http://127.0.0.1:8080/index.html';
+        window.location.href = 'https://dimasalia.github.io/make_db.io/index.html';
     })
     .catch(error => {
         console.error('Fetch Error:', error);
