@@ -7,7 +7,7 @@ const inputInitHeight = chatInput.scrollHeight;
 let currentSql = '';
 
 const generateResponse = async (incomingChatLi) => {
-    const endpoint = 'https://68cb-36-85-1-212.ngrok-free.app/sql/generateSQL';
+    const endpoint = ' https://e9f7-36-85-5-154.ngrok-free.app/sql/generateSQL';
     
     try {
         const response = await fetch(endpoint, {
@@ -129,7 +129,7 @@ modifyBtn.addEventListener('click', async () => {
         chatbox.scrollTo(0, chatbox.scrollHeight);
         const previousSql = currentSql;
 
-        const response = await fetch('https://68cb-36-85-1-212.ngrok-free.app/sql/modifySQLWithMaxTokens', {
+        const response = await fetch(' https://e9f7-36-85-5-154.ngrok-free.app/sql/modifySQLWithMaxTokens', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ modifyBtn.addEventListener('click', async () => {
 
 document.getElementById('downloadSql').addEventListener('click', async () => {
     try {
-        const response = await fetch('https://68cb-36-85-1-212.ngrok-free.app/sql/getSQLResult');
+        const response = await fetch(' https://e9f7-36-85-5-154.ngrok-free.app/sql/getSQLResult');
         const data = await response.json();
 
         if (data.sql === "Tidak Ada SQL yang Dihasilkan") {
@@ -199,7 +199,7 @@ document.getElementById('downloadSql').addEventListener('click', async () => {
 //     });
 // });
 document.getElementById('logoutBtn').addEventListener('click', function() {
-    fetch('http://localhost:3000/auth/logout', {
+    fetch(' https://e9f7-36-85-5-154.ngrok-free.app/auth/logout', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
